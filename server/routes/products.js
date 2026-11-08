@@ -8,7 +8,7 @@ import { requireAuth } from '../middleware/auth.js'
 const router = Router()
 
 // Ensure upload directory exists
-const uploadDir = path.resolve('uploads')
+const uploadDir = path.join(import.meta.dirname, '..', 'uploads')
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true })
 }

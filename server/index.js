@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Static uploads serving
-app.use('/uploads', express.static(path.resolve('uploads')))
+app.use('/uploads', express.static(path.join(import.meta.dirname, 'uploads')))
 
 // Routes
 app.use('/api/auth', authRoutes)
