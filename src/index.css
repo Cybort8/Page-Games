@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-sun text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-cobalt ring-offset-2 ring-offset-paper;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .sign {
+    @apply font-display uppercase leading-[0.88] tracking-[-0.01em];
+  }
+
+  .sticker {
+    @apply inline-flex items-center gap-1 border-2 border-ink px-2 py-1 text-[11px] font-bold uppercase tracking-wider shadow-sticker;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-ink px-5 py-3 text-sm font-semibold transition-transform duration-150 hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-cobalt text-white;
+  }
+
+  .btn-sun {
+    @apply bg-sun text-ink;
+  }
+
+  .btn-ghost {
+    @apply bg-paper text-ink;
+  }
+
+  .field {
+    @apply w-full border-2 border-ink bg-white px-3 py-2 text-sm placeholder:text-ink/40 focus-visible:ring-0;
+  }
+
+  .cartridge {
+    @apply relative border-2 border-ink bg-paper shadow-sticker transition-all duration-200;
+  }
+
+  .cartridge:hover {
+    box-shadow: 6px 6px 0 #17150f;
+    transform: translate(-2px, -2px);
+  }
+
+  .spine {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
